@@ -1,0 +1,72 @@
+body {
+    /* background: #03abf2;
+    background: -webkit-linear-gradient(top, #bfe0ee, #e6bef1);
+    background: -moz-linear-gradient(top, #c2ced3, #cdb7d3);
+    background: linear-gradient(to bottom, #c2cfd4, #a8a0aa); */
+    height: 100vh;
+}
+
+img {
+    width: 200px;
+}
+
+.container {
+    padding-top: 15%;
+}
+
+.imageCell,
+.textCell {
+    width: 50% !important;
+}
+
+#addNew {
+    bottom: 5%;
+    width: 100%;
+    position: fixed;
+    border-radius: 10px;
+    font-size: 150%;
+    text-align: center;
+    vertical-align: center;
+}
+
+#offCanvasAdd table,
+#offCanvasAdd th,
+#offCanvasAdd td {
+    border: 0;
+}
+
+table#offCanvasAdd td {
+    height: 100px;
+    vertical-align: top;
+}
+
+table#offCanvasAdd tr td:first-child {
+    width: 140px;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+#couch {
+    text-align: center;
+}
+
+#couch table {
+    margin-left: auto;
+    margin-right: auto;
+    margin: 20px;
+
+}
+
+#couch table tr {
+    height: 80px;
+}
+
+#couch table tr td:first-child {
+    padding-right: 25px;
+}
+
+nav.navbar.open {
+    margin-bottom: 120px;
+}
