@@ -4,6 +4,11 @@ const add = () => {
 	const description = document.getElementById('description').value;
 	const value = document.getElementById('value').value;
 
+	let room = '';
+	if (selectRoom === '1') room = 'Living Room';
+	else if (selectRoom === '2') room = 'Kitchen';
+	else room = 'Bedroom';
+
 	const allModals = document.getElementById('allModals');
 
 	let divOne = document.createElement('div');
@@ -25,7 +30,7 @@ const add = () => {
 	let hFiveOne = document.createElement('h5');
 	hFiveOne.className = 'modal-title';
 	hFiveOne.id = `${itemName}Label`;
-	hFiveOne.innerHTML = itemName;
+	hFiveOne.innerHTML = `${room}: ${itemName}`;
 
 	let modalButtonOne = document.createElement('button');
 	modalButtonOne.className = 'btn-close';
@@ -132,8 +137,8 @@ const add = () => {
 	button.innerHTML = itemName;
 	li.append(button);
 
-	if (selectRoom === '1') livingRoom.append(li);
-	else if (selectRoom === '2') kitchen.append(li);
+	if (room === 'Living Room') livingRoom.append(li);
+	else if (room === 'Kitchen') kitchen.append(li);
 	else bedroom.append(li);
 
 	console.log('success');
