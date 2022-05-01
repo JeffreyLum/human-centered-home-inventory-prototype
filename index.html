@@ -19,28 +19,21 @@
 </head>
 
 <body>
-
-    <script>
-        $(document).ready(() => {
-            $('.single').click(() => {
-                $('.offcanvas').offcanvas('hide');
-            })
-        })
-
-    </script>
     <!-- Navbar -->
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Home Inventory App</a>
+            <h1 class="navbar-brand">Home Inventory App</h1>
         </div>
     </nav>
 
     <div class="container">
 
+        <h2 class="" aria-current="page">123 Street Drive Ave.</h2><br><br>
 
-        <h2 class="" aria-current="page" href="#">123 Street Drive Ave.</h2>
+        <!-- Folders (Accordions) -->
         <div class="accordion" id="accordionPanelsStayOpenExample">
 
+            <!-- Living Room Accordion -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -55,13 +48,16 @@
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li><button class="btn btn-link" data-bs-toggle="modal"
                                     data-bs-target="#couch">Couch</button></li>
-                            <li><button class="btn btn-link">TV</button></li>
+                            <li><button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#TV">TV</button>
+                            </li>
+                            <li class="appendHere"></li>
 
                         </ul>
                     </div>
                 </div>
             </div>
 
+            <!-- Kitchen Accordion -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -75,13 +71,16 @@
                     <div class="accordion-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-                            <li><button class="btn btn-link" href="#">Toaster</button></li>
-                            <li><button class="btn btn-link" href="#">Cancer-Inducing Microwave</button></li>
+                            <li><button class="btn btn-link" data-bs-toggle="modal"
+                                    data-bs-target="#toaster">Toaster</button></li>
+                            <li><button class="btn btn-link" data-bs-toggle="modal"
+                                    data-bs-target="#microwave">Cancer-Inducing Microwave</button></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
+            <!-- Bedroom Accordion -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -95,8 +94,10 @@
                     <div class="accordion-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-                            <li><button class="btn btn-link" href="#">Bed</button></li>
-                            <li><button class="btn btn-link" href="#">Lamp</button></li>
+                            <li><button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#Bed">Bed</button>
+                            </li>
+                            <li><button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#Lamp">Lamp</button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -104,6 +105,7 @@
         </div>
 
 
+        <!-- ========================================================================== HARD-CODED ENTRIES ========================================================================== -->
         <!-- Couch Modal -->
         <div class="modal fade" id="couch" tabindex="-1" aria-labelledby="couchLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen-sm-down">
@@ -113,7 +115,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div id="couch">
+                        <div id="couch" class="household-item">
                             <h2>Couch</h2><br>
                             <img src="https://cdn.discordapp.com/attachments/472998894960246794/968923342201585684/unknown.png"
                                 alt=""><br><br>
@@ -153,9 +155,251 @@
             </div>
         </div>
 
+        <!-- TV Modal -->
+        <div class="modal fade" id="TV" tabindex="-1" aria-labelledby="TVLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen-sm-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="TVLabel">Living Room: TV</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="TV" class="household-item">
+                            <h2>TV</h2><br>
+                            <img src="https://techtrendske.co.ke/wp-content/uploads/2018/07/lg-oled-tv.jpg"
+                                alt=""><br><br>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h5>Item</h5>
+                                    </td>
+                                    <td>
+                                        <h5>LG OLED TV</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Price</h5>
+                                    </td>
+                                    <td>
+                                        <h5>$7999.99</h5>
+                                    </td>
 
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Description</h5>
+                                    </td>
+                                    <td>
+                                        <p>6k 50 inch LG OLED TV. Purchased August 1, 2021</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!-- Modal For Adding New Item -->
+        <!-- Toaster Modal -->
+        <div class="modal fade" id="toaster" tabindex="-1" aria-labelledby="ToasterLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen-sm-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ToasterLabel">Kitchen: Toaster</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="Toaster" class="household-item">
+                            <h2>Toaster</h2><br>
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.oster.ca%2Fon%2Fdemandware.static%2F-%2FSites-master-catalog%2Fdefault%2Fdw5e9c7ffa%2Fimages%2FOster%2Fca-oster%2FTSSTTRJB31R-033-5.jpg&f=1&nofb=1"
+                                alt=""><br><br>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h5>Item</h5>
+                                    </td>
+                                    <td>
+                                        <h5>Oster Toaster</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Price</h5>
+                                    </td>
+                                    <td>
+                                        <h5>$99.99</h5>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Description</h5>
+                                    </td>
+                                    <td>
+                                        <p>Toaster. Purchased July 4, 2018</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Microwave Modal -->
+        <div class="modal fade" id="microwave" tabindex="-1" aria-labelledby="MicrowaveLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen-sm-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="MicrowaveLabel">Kitchen: Microwave</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="Microwave" class="household-item">
+                            <h2>Microwave</h2><br>
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.regale.co.uk%2Fwp-content%2Fuploads%2F2014%2F04%2Fmicrowave8.jpg&f=1&nofb=1"
+                                alt=""><br><br>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h5>Item</h5>
+                                    </td>
+                                    <td>
+                                        <h5>Panasonic Microwave</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Price</h5>
+                                    </td>
+                                    <td>
+                                        <h5>$139.99</h5>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Description</h5>
+                                    </td>
+                                    <td>
+                                        <p>Panasonic Microwave. Purchased from Target on July 14, 2018</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bed Modal -->
+        <div class="modal fade" id="Bed" tabindex="-1" aria-labelledby="BedLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen-sm-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="BedLabel">Bedroom: Bed</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="Bed" class="household-item">
+                            <h2>Bed</h2><br>
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi5.walmartimages.com%2Fasr%2Fd6aa12f6-ff69-4c26-ac61-e801f3b8c0b7_2.46395cb99ad3ba78bbc627441d627acd.jpeg&f=1&nofb=1"
+                                alt=""><br><br>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h5>Item</h5>
+                                    </td>
+                                    <td>
+                                        <h5>King's Bed</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Price</h5>
+                                    </td>
+                                    <td>
+                                        <h5>$2999.99</h5>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Description</h5>
+                                    </td>
+                                    <td>
+                                        <p>King's Bed. Purchased from Ikea on February 1, 2022</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lamp Modal -->
+        <div class="modal fade" id="Lamp" tabindex="-1" aria-labelledby="LampLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen-sm-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="LampLabel">Bedroom: Lamp</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="Lamp" class="household-item">
+                            <h2>Lamp</h2><br>
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.chloelighting.com%2Fcontent%2Fimages%2Fthumbs%2F0003816_ch3t040av16-tl2-table-lamp.jpeg&f=1&nofb=1"
+                                alt=""><br><br>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h5>Item</h5>
+                                    </td>
+                                    <td>
+                                        <h5>Lamp</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Price</h5>
+                                    </td>
+                                    <td>
+                                        <h5>$2999.99</h5>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Description</h5>
+                                    </td>
+                                    <td>
+                                        <p>Lamp. Purchased from Ikea on February 1, 2022</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal For Adding New Item or Folder -->
         <div id="addNew">
 
             <!-- Button trigger modal -->
@@ -220,7 +464,7 @@
                                     <td colspan="2">
                                         <div class="input-group input-group-sm mb-3">
 
-                                            <input type="number" class="form-control" aria-label="Small"
+                                            <input type="number" min="0" class="form-control" aria-label="Small"
                                                 aria-describedby="inputGroup-sizing-sm"
                                                 placeholder="Enter Value of Item">
                                         </div>
