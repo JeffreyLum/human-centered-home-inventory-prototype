@@ -10,7 +10,7 @@ const add = () => {
 
 	let divOne = document.createElement('div');
 	divOne.className = 'modal fade';
-	divOne.id = itemName;
+	divOne.id = itemName.replace(/\s/g, '');
 	divOne.setAttribute('tabindex', '-1');
 	divOne.setAttribute('aria-labelledby', `${itemName}Label`);
 	divOne.setAttribute('aria-hidden', 'true');
@@ -126,7 +126,7 @@ const add = () => {
 	let button = document.createElement('button');
 	button.className = 'btn btn-link';
 	button.setAttribute('data-bs-toggle', 'modal');
-	button.setAttribute('data-bs-target', `#${itemName}`);
+	button.setAttribute('data-bs-target', `#${itemName.replace(/\s/g, '')}`);
 	button.innerHTML = itemName;
 
 	li.append(button);
