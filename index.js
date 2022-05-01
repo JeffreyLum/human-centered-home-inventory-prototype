@@ -9,8 +9,8 @@ const add = () => {
 	else if (selectRoom === '2') room = 'Kitchen';
 	else room = 'Bedroom';
 
+	// CREATING THE BOOTSTRAP MODAL ============================================
 	const allModals = document.getElementById('allModals');
-
 	let divOne = document.createElement('div');
 	divOne.className = 'modal fade';
 	divOne.id = itemName.replace(/\s/g, '');
@@ -88,7 +88,6 @@ const add = () => {
 	modalButtonTwo.innerHTML = 'Close';
 
 	allModals.append(divOne);
-
 	divOne.append(divTwo);
 	divTwo.append(divThree);
 	divThree.append(divFour);
@@ -102,33 +101,31 @@ const add = () => {
 	table.append(trOne);
 	table.append(trTwo);
 	table.append(trThree);
-
 	trOne.append(tdOne);
 	trOne.appendChild(tdTwo);
 	tdOne.append(hFiveTwo);
 	tdTwo.append(hFiveThree);
-
 	trTwo.append(tdThree);
 	trTwo.append(tdFour);
 	tdThree.append(hFiveFour);
 	tdFour.append(hFiveFive);
-
 	trThree.append(tdFive);
 	trThree.append(tdSix);
 	tdFive.append(hFiveSix);
 	tdSix.append(p);
-
 	divThree.append(divSeven);
 	divSeven.append(modalButtonTwo);
-
+	// END OF CREATING BOOTSTRAP MODAL ===================================
 	console.log(
 		`Room: ${selectRoom}\nItem: ${itemName}\nDescription: ${description}\nValue: ${value}`
 	);
 
+	// Getting the folders to append stuff to
 	const livingRoom = document.getElementById('livingRoomList');
 	const kitchen = document.getElementById('kitchenList');
 	const bedroom = document.getElementById('bedroomList');
 
+	// Creating the button that will target and activate the modal
 	let li = document.createElement('li');
 	let button = document.createElement('button');
 	button.className = 'btn btn-link';
