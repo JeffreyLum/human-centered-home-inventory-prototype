@@ -1,6 +1,4 @@
 const add = () => {
-	const livingRoom = document.getElementById('livingRoomList');
-
 	const selectRoom = document.getElementById('selectRoom').value;
 	const itemName = document.getElementById('itemName').value;
 	const description = document.getElementById('description').value;
@@ -72,8 +70,8 @@ const add = () => {
 	let hFiveSix = document.createElement('h5');
 	hFiveSix.innerHTML = 'Description';
 	let tdSix = document.createElement('td');
-	let hFiveSeven = document.createElement('h5');
-	hFiveSeven.innerHTML = description;
+	let p = document.createElement('p');
+	p.innerHTML = description;
 
 	let divSeven = document.createElement('div');
 	divSeven.className = 'modal-footer';
@@ -113,7 +111,7 @@ const add = () => {
 	trThree.append(tdFive);
 	trThree.append(tdSix);
 	tdFive.append(hFiveSix);
-	tdSix.append(hFiveSeven);
+	tdSix.append(p);
 
 	divThree.append(divSeven);
 	divSeven.append(modalButtonTwo);
@@ -122,14 +120,21 @@ const add = () => {
 		`Room: ${selectRoom}\nItem: ${itemName}\nDescription: ${description}\nValue: ${value}`
 	);
 
+	const livingRoom = document.getElementById('livingRoomList');
+	const kitchen = document.getElementById('kitchenList');
+	const bedroom = document.getElementById('bedroomList');
+
 	let li = document.createElement('li');
 	let button = document.createElement('button');
 	button.className = 'btn btn-link';
 	button.setAttribute('data-bs-toggle', 'modal');
 	button.setAttribute('data-bs-target', `#${itemName.replace(/\s/g, '')}`);
 	button.innerHTML = itemName;
-
 	li.append(button);
-	livingRoom.append(li);
+
+	if (selectRoom === '1') livingRoom.append(li);
+	else if (selectRoom === '2') kitchen.append(li);
+	else bedroom.append(li);
+
 	console.log('success');
 };
