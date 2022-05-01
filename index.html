@@ -45,12 +45,11 @@
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
                     aria-labelledby="panelsStayOpen-headingOne">
                     <div class="accordion-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="livingRoomList">
                             <li><button class="btn btn-link" data-bs-toggle="modal"
                                     data-bs-target="#couch">Couch</button></li>
                             <li><button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#TV">TV</button>
                             </li>
-                            <li class="appendHere"></li>
 
                         </ul>
                     </div>
@@ -399,6 +398,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Modal For Adding New Item or Folder -->
         <div id="addNew">
 
@@ -486,7 +486,8 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Confirm</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                onclick="add()">Confirm</button>
                         </div>
                     </div>
                 </div>

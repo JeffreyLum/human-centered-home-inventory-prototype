@@ -1,14 +1,22 @@
-const t = document.getElementById('couch');
-t.style.display = 'none';
+const t = document.getElementById('test');
 
-const couch = () => {
-	const couch = document.getElementById('couch');
+const add = () => {
+	let livingRoom = document.getElementById('livingRoomList');
 
-	couch.style.display = 'block';
+	let li = document.createElement('li');
+	let button = document.createElement('button');
+	button.className = 'btn btn-link';
+	button.setAttribute('data-bs-toggle', 'modal');
+	button.setAttribute('data-bs-target', '#TV');
+	button.innerHTML = 'TV';
+
+	li.append(button);
+	livingRoom.append(li);
+	console.log('success');
 };
 
 const technology = () => {
-	const furniture = document.getElementById('furniture');
+	const livingRoom = document.getElementById('livingRoomList');
 
 	furniture.style.display = 'none';
 };
