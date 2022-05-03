@@ -138,6 +138,10 @@ const addRoom = () => {
 	const roomName = document.getElementById('roomName').value;
 	const roomID = roomName.replace(' ', '-');
 
+	const rooms = document.getElementsByClassName('room-list');
+	const roomNumber = rooms.length + 1;
+
+
 	// CREATING THE BOOTSTRAP MODAL ============================================
 	const selectRoomModal = document.getElementById('selectRoom');
 	const option = document.createElement('option');
@@ -150,21 +154,21 @@ const addRoom = () => {
 
 	const accordionHeader = document.createElement('h2');
 	accordionHeader.className = 'accordion-header';
-	accordionHeader.id = 'panelsStayOpen-heading4';
+	accordionHeader.id = 'panelsStayOpen-heading' + roomNumber;
 
 	const accordionButton = document.createElement('button');
 	accordionButton.className = 'accordion-button collapsed';
 	accordionButton.type = 'button';
 	accordionButton.setAttribute('data-bs-toggle', 'collapse');
-	accordionButton.setAttribute('data-bs-target', '#panelsStayOpen-collapse4');
+	accordionButton.setAttribute('data-bs-target', '#panelsStayOpen-collapse' + roomNumber);
 	accordionButton.setAttribute('aria-expanded', 'false');
-	accordionButton.setAttribute('aria-controls', 'panelsStayOpen-collapse4');
+	accordionButton.setAttribute('aria-controls', 'panelsStayOpen-collapse' + roomNumber);
 	accordionButton.innerHTML = roomName;
 
 	const accordionCollapse = document.createElement('div');
-	accordionCollapse.id = 'panelsStayOpen-collapse4';
+	accordionCollapse.id = 'panelsStayOpen-collapse' + roomNumber;
 	accordionCollapse.className = 'accordion-collapse collapse';
-	accordionCollapse.setAttribute('aria-labelledby', 'panelsStayOpen-heading4');
+	accordionCollapse.setAttribute('aria-labelledby', 'panelsStayOpen-heading' + roomNumber);
 
 	const accordionBody = document.createElement('div');
 	accordionBody.className = 'accordion-body';
