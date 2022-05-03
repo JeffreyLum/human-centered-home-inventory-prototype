@@ -35,17 +35,17 @@
 
             <!-- Living Room Accordion -->
             <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <h2 class="accordion-header" id="panelsStayOpen-heading1">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseOne">
+                        data-bs-target="#panelsStayOpen-collapse1" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapse1">
                         Living Room
                     </button>
                 </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
-                    aria-labelledby="panelsStayOpen-headingOne">
+                <div id="panelsStayOpen-collapse1" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-heading1">
                     <div class="accordion-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="livingRoomList">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 room-list" id="living-room-list">
                             <li><button class="btn btn-link" data-bs-toggle="modal"
                                     data-bs-target="#couch">Couch</button></li>
                             <li><button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#TV">TV</button>
@@ -58,17 +58,17 @@
 
             <!-- Kitchen Accordion -->
             <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <h2 class="accordion-header" id="panelsStayOpen-heading2">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseTwo">
+                        data-bs-target="#panelsStayOpen-collapse2" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapse2">
                         Kitchen
                     </button>
                 </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                    aria-labelledby="panelsStayOpen-headingTwo">
+                <div id="panelsStayOpen-collapse2" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-heading2">
                     <div class="accordion-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="kitchenList">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 room-list" id="kitchen-list">
 
                             <li><button class="btn btn-link" data-bs-toggle="modal"
                                     data-bs-target="#toaster">Toaster</button></li>
@@ -81,17 +81,17 @@
 
             <!-- Bedroom Accordion -->
             <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <h2 class="accordion-header" id="panelsStayOpen-heading3">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseThree">
+                        data-bs-target="#panelsStayOpen-collapse3" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapse3">
                         Bedroom
                     </button>
                 </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                    aria-labelledby="panelsStayOpen-headingThree">
+                <div id="panelsStayOpen-collapse3" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-heading3">
                     <div class="accordion-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="bedroomList">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 room-list" id="bedroom-list">
 
                             <li><button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#Bed">Bed</button>
                             </li>
@@ -405,19 +405,23 @@
             <div id="addNew">
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#offcanvasModal">
-                    <strong>+Add a new item or folder</strong>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newItemModal">
+                    <strong>+Add a new item</strong>
+                </button>
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newFolderModal">
+                    <strong>+Add a new folder</strong>
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="offcanvasModal" data-bs-backdrop="false" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="newItemModal" data-bs-backdrop="false" data-bs-keyboard="false"
+                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="staticBackdropLabel">Add Item</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                        aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <table id="offCanvasAdd">
@@ -427,11 +431,11 @@
                                         </td>
                                         <td colspan="2">
                                             <select class="form-select" aria-label="Default select example"
-                                                id="selectRoom">
+                                                    id="selectRoom">
                                                 <option selected>Select a Room</option>
-                                                <option value="1">Living Room</option>
-                                                <option value="2">Kitchen</option>
-                                                <option value="3">Bedroom</option>
+                                                <option value="living-room">Living Room</option>
+                                                <option value="kitchen">Kitchen</option>
+                                                <option value="bedroom">Bedroom</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -443,8 +447,8 @@
                                             <div class="input-group input-group-sm mb-3">
 
                                                 <input type="text" class="form-control" aria-label="Small"
-                                                    aria-describedby="inputGroup-sizing-sm"
-                                                    placeholder="Enter Name of Item" id="itemName">
+                                                       aria-describedby="inputGroup-sizing-sm"
+                                                       placeholder="Enter Name of Item" id="itemName">
                                             </div>
                                         </td>
                                     </tr>
@@ -456,8 +460,8 @@
                                             <div class="input-group input-group-md">
 
                                                 <input type="text" class="form-control" aria-label="Medium"
-                                                    aria-describedby="inputGroup-sizing-sm"
-                                                    placeholder="Enter Description of Item" id="description">
+                                                       aria-describedby="inputGroup-sizing-sm"
+                                                       placeholder="Enter Description of Item" id="description">
                                             </div>
                                         </td>
                                     </tr>
@@ -469,8 +473,8 @@
                                             <div class="input-group input-group-sm mb-3">
 
                                                 <input type="number" min="0" class="form-control" aria-label="Small"
-                                                    aria-describedby="inputGroup-sizing-sm"
-                                                    placeholder="Enter Value of Item" id="value">
+                                                       aria-describedby="inputGroup-sizing-sm"
+                                                       placeholder="Enter Value of Item" id="value">
                                             </div>
                                         </td>
                                     </tr>
@@ -481,9 +485,10 @@
                                         <td>
                                             <input type="file" id="selectedFile" style="display: none;" />
                                             <input class="btn btn-info" type="button" value="Upload"
-                                                onclick="document.getElementById('selectedFile').click();" />
+                                                   onclick="document.getElementById('selectedFile').click();" />
                                         </td>
-                                        <td><button type="button" class="btn btn-info">Take Photo</button>
+                                        <td>
+                                            <button type="button" class="btn btn-info">Take Photo</button>
                                         </td>
                                     </tr>
                                 </table>
@@ -491,11 +496,51 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                                    onclick="add()">Confirm</button>
+                                        onclick="addItem()">
+                                    Confirm
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="modal fade" id="newFolderModal" data-bs-backdrop="false" data-bs-keyboard="false"
+                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Add Folder</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <table id="offCanvasAdd">
+                                    <tr>
+                                        <td>
+                                            <h6>Room Name</h6>
+                                        </td>
+                                        <td colspan="2">
+                                            <div class="input-group input-group-sm mb-3">
+
+                                                <input type="text" class="form-control" aria-label="Small"
+                                                       aria-describedby="inputGroup-sizing-sm"
+                                                       placeholder="Enter Name of Room" id="roomName">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                        onclick="addRoom()">
+                                    Confirm
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
 
@@ -510,3 +555,5 @@
 </body>
 
 </html>
+
+

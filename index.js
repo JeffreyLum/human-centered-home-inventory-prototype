@@ -1,13 +1,9 @@
-const add = () => {
-	const selectRoom = document.getElementById('selectRoom').value;
+const addItem = () => {
+	const roomID = document.getElementById('selectRoom').value;
+
 	const itemName = document.getElementById('itemName').value;
 	const description = document.getElementById('description').value;
 	const value = document.getElementById('value').value;
-
-	let room = '';
-	if (selectRoom === '1') room = 'Living Room';
-	else if (selectRoom === '2') room = 'Kitchen';
-	else room = 'Bedroom';
 
 	// CREATING THE BOOTSTRAP MODAL ============================================
 	const allModals = document.getElementById('allModals');
@@ -30,7 +26,7 @@ const add = () => {
 	let hFiveOne = document.createElement('h5');
 	hFiveOne.className = 'modal-title';
 	hFiveOne.id = `${itemName}Label`;
-	hFiveOne.innerHTML = `${room}: ${itemName}`;
+	hFiveOne.innerHTML = `${roomID}: ${itemName}`;
 
 	let modalButtonOne = document.createElement('button');
 	modalButtonOne.className = 'btn-close';
@@ -121,9 +117,7 @@ const add = () => {
 	);
 
 	// Getting the folders to append stuff to
-	const livingRoom = document.getElementById('livingRoomList');
-	const kitchen = document.getElementById('kitchenList');
-	const bedroom = document.getElementById('bedroomList');
+	const room = document.getElementById(roomID + '-list');
 
 	// Creating the button that will target and activate the modal
 	let li = document.createElement('li');
@@ -134,9 +128,65 @@ const add = () => {
 	button.innerHTML = itemName;
 	li.append(button);
 
-	if (room === 'Living Room') livingRoom.append(li);
-	else if (room === 'Kitchen') kitchen.append(li);
-	else bedroom.append(li);
+	room.append(li);
 
 	console.log('success');
 };
+
+
+const addRoom = () => {
+	const roomName = document.getElementById('roomName').value;
+	const roomID = roomName.replace(' ', '-');
+
+	const rooms = document.getElementsByClassName('room-list');
+	const roomNumber = rooms.length + 1;
+
+
+	// CREATING THE BOOTSTRAP MODAL ============================================
+	const selectRoomModal = document.getElementById('selectRoom');
+	const option = document.createElement('option');
+	option.setAttribute('value', roomID);
+	option.innerHTML = roomName;
+	selectRoomModal.append(option);
+
+	const accordionItem = document.createElement('div');
+	accordionItem.className = 'accordion-item';
+
+	const accordionHeader = document.createElement('h2');
+	accordionHeader.className = 'accordion-header';
+	accordionHeader.id = 'panelsStayOpen-heading' + roomNumber;
+
+	const accordionButton = document.createElement('button');
+	accordionButton.className = 'accordion-button collapsed';
+	accordionButton.type = 'button';
+	accordionButton.setAttribute('data-bs-toggle', 'collapse');
+	accordionButton.setAttribute('data-bs-target', '#panelsStayOpen-collapse' + roomNumber);
+	accordionButton.setAttribute('aria-expanded', 'false');
+	accordionButton.setAttribute('aria-controls', 'panelsStayOpen-collapse' + roomNumber);
+	accordionButton.innerHTML = roomName;
+
+	const accordionCollapse = document.createElement('div');
+	accordionCollapse.id = 'panelsStayOpen-collapse' + roomNumber;
+	accordionCollapse.className = 'accordion-collapse collapse';
+	accordionCollapse.setAttribute('aria-labelledby', 'panelsStayOpen-heading' + roomNumber);
+
+	const accordionBody = document.createElement('div');
+	accordionBody.className = 'accordion-body';
+
+	const unorderedList = document.createElement('ul');
+	unorderedList.className = 'navbar-nav justify-content-end flex-grow-1 pe-4 room-list';
+	unorderedList.id = roomID + '-list';
+
+
+	accordionItem.append(accordionHeader);
+	accordionHeader.append(accordionButton);
+	accordionItem.append(accordionCollapse);
+	accordionCollapse.append(accordionBody);
+	accordionBody.append(unorderedList);
+
+	const accordion = document.getElementById('accordionPanelsStayOpenExample');
+	accordion.append(accordionItem);
+
+	console.log('success');
+};
+
