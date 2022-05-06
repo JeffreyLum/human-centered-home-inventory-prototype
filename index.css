@@ -19,6 +19,18 @@ img {
     width: 50% !important;
 }
 
+.stats {
+    padding-top: 1%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
 #addNew {
     bottom: 5%;
     width: 100%;

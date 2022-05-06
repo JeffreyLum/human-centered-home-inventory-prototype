@@ -401,151 +401,210 @@
                 </div>
             </div>
 
+            <!-- Display total value of inventory -->
+            <div class="stats">Total Value: $<span id="total">14739.94</span></div>
+
+            <!-- Display total items in inventory -->
+            <div class="stats">Total Items: <span id="items">6</span></div>
+
             <!-- Modal For Adding New Item or Folder -->
             <div id="addNew">
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newItemModal">
+                <div class="left"><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#recItemModal">
+                        <strong>Recommended Items</strong>
+                    </button></div>
+
+                <div class="right"></div><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#newItemModal">
                     <strong>+Add a new item</strong>
                 </button>
 
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newFolderModal">
                     <strong>+Add a new folder</strong>
                 </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="newItemModal" data-bs-backdrop="false" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Add Item</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <table id="offCanvasAdd">
-                                    <tr>
-                                        <td>
-                                            <h6>Select Room</h6>
-                                        </td>
-                                        <td colspan="2">
-                                            <select class="form-select" aria-label="Default select example"
-                                                id="selectRoom">
-                                                <option selected>Select a Room</option>
-                                                <option value="living-room">Living Room</option>
-                                                <option value="kitchen">Kitchen</option>
-                                                <option value="bedroom">Bedroom</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6>Item Name</h6>
-                                        </td>
-                                        <td colspan="2">
-                                            <div class="input-group input-group-sm mb-3">
-
-                                                <input type="text" class="form-control" aria-label="Small"
-                                                    aria-describedby="inputGroup-sizing-sm"
-                                                    placeholder="Enter Name of Item" id="itemName">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6>Description</h6>
-                                        </td>
-                                        <td colspan="2">
-                                            <div class="input-group input-group-md">
-
-                                                <input type="text" class="form-control" aria-label="Medium"
-                                                    aria-describedby="inputGroup-sizing-sm"
-                                                    placeholder="Enter Description of Item" id="description">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6>Value</h6>
-                                        </td>
-                                        <td colspan="2">
-                                            <div class="input-group input-group-sm mb-3">
-
-                                                <input type="number" min="0" class="form-control" aria-label="Small"
-                                                    aria-describedby="inputGroup-sizing-sm"
-                                                    placeholder="Enter Value of Item" id="value">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6>Photo</h6>
-                                        </td>
-                                        <td>
-                                            <input type="file" id="selectedFile" style="display: none;" />
-                                            <input class="btn btn-info" type="button" value="Upload"
-                                                onclick="document.getElementById('selectedFile').click();" />
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-info">Take Photo</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                                    onclick="addItem()">
-                                    Confirm
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal fade" id="newFolderModal" data-bs-backdrop="false" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Add Folder</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <table id="offCanvasAdd">
-                                    <tr>
-                                        <td>
-                                            <h6>Room Name</h6>
-                                        </td>
-                                        <td colspan="2">
-                                            <div class="input-group input-group-sm mb-3">
-
-                                                <input type="text" class="form-control" aria-label="Small"
-                                                    aria-describedby="inputGroup-sizing-sm"
-                                                    placeholder="Enter Name of Room" id="roomName">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                                    onclick="addRoom()">
-                                    Confirm
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
+            <!-- Modal -->
+            <div class="modal fade" id="newItemModal" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Add Item</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table id="offCanvasAdd">
+                                <tr>
+                                    <td>
+                                        <h6>Select Room</h6>
+                                    </td>
+                                    <td colspan="2">
+                                        <select class="form-select" aria-label="Default select example" id="selectRoom">
+                                            <option selected>Select a Room</option>
+                                            <option value="living-room">Living Room</option>
+                                            <option value="kitchen">Kitchen</option>
+                                            <option value="bedroom">Bedroom</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6>Item Name</h6>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="input-group input-group-sm mb-3">
 
-            <!-- JavaScript Added Modals -->
+                                            <input type="text" class="form-control" aria-label="Small"
+                                                aria-describedby="inputGroup-sizing-sm" placeholder="Enter Name of Item"
+                                                id="itemName">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6>Description</h6>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="input-group input-group-md">
+
+                                            <input type="text" class="form-control" aria-label="Medium"
+                                                aria-describedby="inputGroup-sizing-sm"
+                                                placeholder="Enter Description of Item" id="description">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6>Value</h6>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="input-group input-group-sm mb-3">
+
+                                            <input type="number" min="0" class="form-control" aria-label="Small"
+                                                aria-describedby="inputGroup-sizing-sm"
+                                                placeholder="Enter Value of Item" id="value">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6>Photo</h6>
+                                    </td>
+                                    <td>
+                                        <input type="file" id="selectedFile" style="display: none;" />
+                                        <input class="btn btn-info" type="button" value="Upload"
+                                            onclick="document.getElementById('selectedFile').click();" />
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-info">Take Photo</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addItem()">
+                                Confirm
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="newFolderModal" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Add Folder</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table id="offCanvasAdd">
+                                <tr>
+                                    <td>
+                                        <h6>Room Name</h6>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="input-group input-group-sm mb-3">
+
+                                            <input type="text" class="form-control" aria-label="Small"
+                                                aria-describedby="inputGroup-sizing-sm" placeholder="Enter Name of Room"
+                                                id="roomName">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addRoom()">
+                                Confirm
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="recItemModal" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Recommended Items</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <h6>Living Room</h6>
+                                <ul>
+                                    <li>Couch</li>
+                                    <li>TV</li>
+                                    <li>TV Stand</li>
+                                    <li>Coffee Table</li>
+                                    <li>Armchair</li>
+                                    <li>Rug</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h6>Kitchen</h6>
+                                <ul>
+                                    <li>Refrigerator</li>
+                                    <li>Toaster</li>
+                                    <li>Oven</li>
+                                    <li>Microwave</li>
+                                    <li>Dishwasher</li>
+                                    <li>Coffee Maker</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h6>Bedroom</h6>
+                                <ul>
+                                    <li>Bed</li>
+                                    <li>Lamp</li>
+                                    <li>Desk</li>
+                                    <li>Computer</li>
+                                    <li>Nightstand</li>
+                                    <li>Dresser</li>
+                                </ul>
+                            </div>
+                            <div><h6>It is recommended to input serial numbers, condition, and dates/location of purchases in item descriptions when possible.</h6></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+
+        <!-- JavaScript Added Modals -->
+    </div>
 
 
 
