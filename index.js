@@ -45,8 +45,7 @@ const addItem = () => {
 	hTwo.innerHTML = itemName;
 
 	let imgSrc = document.createElement('img');
-	imgSrc.src =
-		'https://cdn.discordapp.com/attachments/472998894960246794/968923342201585684/unknown.png';
+	imgSrc.src = 'https://cdn.onlinewebfonts.com/svg/img_148071.png';
 
 	let table = document.createElement('table');
 
@@ -133,14 +132,12 @@ const addItem = () => {
 	console.log('success');
 };
 
-
 const addRoom = () => {
 	const roomName = document.getElementById('roomName').value;
 	const roomID = roomName.replace(' ', '-');
 
 	const rooms = document.getElementsByClassName('room-list');
 	const roomNumber = rooms.length + 1;
-
 
 	// CREATING THE BOOTSTRAP MODAL ============================================
 	const selectRoomModal = document.getElementById('selectRoom');
@@ -160,23 +157,32 @@ const addRoom = () => {
 	accordionButton.className = 'accordion-button collapsed';
 	accordionButton.type = 'button';
 	accordionButton.setAttribute('data-bs-toggle', 'collapse');
-	accordionButton.setAttribute('data-bs-target', '#panelsStayOpen-collapse' + roomNumber);
+	accordionButton.setAttribute(
+		'data-bs-target',
+		'#panelsStayOpen-collapse' + roomNumber
+	);
 	accordionButton.setAttribute('aria-expanded', 'false');
-	accordionButton.setAttribute('aria-controls', 'panelsStayOpen-collapse' + roomNumber);
+	accordionButton.setAttribute(
+		'aria-controls',
+		'panelsStayOpen-collapse' + roomNumber
+	);
 	accordionButton.innerHTML = roomName;
 
 	const accordionCollapse = document.createElement('div');
 	accordionCollapse.id = 'panelsStayOpen-collapse' + roomNumber;
 	accordionCollapse.className = 'accordion-collapse collapse';
-	accordionCollapse.setAttribute('aria-labelledby', 'panelsStayOpen-heading' + roomNumber);
+	accordionCollapse.setAttribute(
+		'aria-labelledby',
+		'panelsStayOpen-heading' + roomNumber
+	);
 
 	const accordionBody = document.createElement('div');
 	accordionBody.className = 'accordion-body';
 
 	const unorderedList = document.createElement('ul');
-	unorderedList.className = 'navbar-nav justify-content-end flex-grow-1 pe-4 room-list';
+	unorderedList.className =
+		'navbar-nav justify-content-end flex-grow-1 pe-4 room-list';
 	unorderedList.id = roomID + '-list';
-
 
 	accordionItem.append(accordionHeader);
 	accordionHeader.append(accordionButton);
@@ -189,4 +195,3 @@ const addRoom = () => {
 
 	console.log('success');
 };
-
