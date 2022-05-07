@@ -1,3 +1,6 @@
+let totalValue = 14739.94;
+let totalItems = 6;
+
 const addItem = () => {
 	const roomID = document.getElementById('selectRoom').value;
 
@@ -128,6 +131,11 @@ const addItem = () => {
 	li.append(button);
 
 	room.append(li);
+
+	totalValue = totalValue + parseFloat(value);
+	document.getElementById('total').innerHTML = totalValue;
+	totalItems = totalItems + 1;
+	document.getElementById('items').innerHTML = totalItems;
 
 	console.log('success');
 };
