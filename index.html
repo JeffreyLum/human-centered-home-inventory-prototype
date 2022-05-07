@@ -494,9 +494,10 @@
                                         <h6>Photo</h6>
                                     </td>
                                     <td>
-                                        <input type="file" id="selectedFile" style="display: none;" />
+                                        <input type="file" id="selectedFile" style="display: none;" onchange="loadFile(event)" />
                                         <input class="btn btn-info" type="button" value="Upload"
                                             onclick="document.getElementById('selectedFile').click();" />
+                                        <p><img id="output" width="200" /></p>
                                     </td>
                                     <td>
                                         <button type="button" class="btn btn-info">Take Photo</button>
@@ -591,7 +592,10 @@
                                     <li>Dresser</li>
                                 </ul>
                             </div>
-                            <div><h6>It is recommended to input serial numbers, condition, and dates/location of purchases in item descriptions when possible.</h6></div>
+                            <div>
+                                <h6>It is recommended to input serial numbers, condition, and dates/location of
+                                    purchases in item descriptions when possible.</h6>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -609,7 +613,12 @@
 
 
     </div>
-
+    <script>
+        var loadFile = function (event) {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
     <script src="index.js"></script>
 </body>
 
